@@ -1,6 +1,7 @@
 #ifndef PATTERNS_CYCLICBUFFER_H
 #define PATTERNS_CYCLICBUFFER_H
 #include <iostream>
+#include "Integer.h"
 
 using namespace std;
 
@@ -21,5 +22,6 @@ public:
 };
 
 
-
+template class CyclicBuffer<Integer>;
+template class CyclicBuffer<Integer, 10>;
 #endif //PATTERNS_CYCLICBUFFER_H

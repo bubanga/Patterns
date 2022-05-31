@@ -35,17 +35,25 @@ void CyclicBuffer<T, CAPACITY>::put(T value) {
     if (this->p_write == CAPACITY)
         this->p_write = 0;
 
-    if (++this->count > CAPACITY-1)
-        this->count = CAPACITY-1;
+    if (++this->count == CAPACITY)
+        this->count = CAPACITY;
 
     this->buffer[temp] = value;
 }
 
 template<typename T, int CAPACITY>
 void CyclicBuffer<T, CAPACITY>::print() const {
+    cout << "<";
+
+    int count = (CAPACITY - this->count);
+
+
     for (int i = 0; i < this->count; ++i) {
-        cout << this->buffer[i];
+        cout << this->buffer[i+count];
+        if (i < this->count-1)
+            cout << ", ";
     }
+     cout << ">" << endl;
 }
 
 
