@@ -14,6 +14,7 @@ private:
     int p_write = 0; // index to write
     int count = 0; // number of elements
 public:
+    explicit CyclicBuffer();
     bool empty(); // check if empty
     bool full();  // check if full
     T get();           // get element from buffer (if not empty)

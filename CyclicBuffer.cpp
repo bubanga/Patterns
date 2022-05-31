@@ -56,6 +56,9 @@ void CyclicBuffer<T, CAPACITY>::print() const {
      cout << ">" << endl;
 }
 
+template<typename T, int CAPACITY>
+CyclicBuffer<T, CAPACITY>::CyclicBuffer() = default;
+
 
 
 
